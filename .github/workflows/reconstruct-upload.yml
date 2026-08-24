@@ -1,6 +1,9 @@
 name: Reconstruct prepared project bundle
 
 on:
+  pull_request:
+    paths:
+      - '.upload_parts/READY'
   push:
     paths:
       - '.upload_parts/READY'
@@ -13,6 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref || github.ref_name }}
       - name: Reconstruct project files
         shell: bash
         run: |
@@ -31,4 +36,4 @@ jobs:
             exit 0
           fi
           git commit -m 'Add FEMU Hot/Cold FTL implementation and experiment artifacts'
-          git push
+          git push origin HEAD

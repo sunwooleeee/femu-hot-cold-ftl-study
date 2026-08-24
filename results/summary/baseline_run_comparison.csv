@@ -1,0 +1,4 @@
+passengers,runtime_us_paired,avg_write_latency_us_paired,avg_flush_latency_us_paired,runtime_us_extra,avg_write_latency_us_extra,avg_flush_latency_us_extra,runtime_ratio_extra_to_paired,write_latency_ratio_extra_to_paired
+100,5225833,1059.59,5.92,1425129,278.01,4.18,0.2727084849439314,0.2623750696023934
+500,24188805,1080.49,8.63,8448512,358.91,8.88,0.34927364125677146,0.3321733657877445
+1000,40558639,1067.52,6.02,12827356,321.59,5.9,0.3162669240454543,0.3012496252997602

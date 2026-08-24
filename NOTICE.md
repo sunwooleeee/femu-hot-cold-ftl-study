@@ -9,4 +9,4 @@ Original project:
 FEMU is distributed under the GNU General Public License v2.0.
 The modified FEMU source files included here are redistributed under the same license.
 
-The experiment-specific analysis, documentation, result tables, and generated figures in this repository were prepared from the supplied project materials.
+The experiment documentation, result tables, and figures in this repository correspond to this project's recorded analysis and presentation materials.

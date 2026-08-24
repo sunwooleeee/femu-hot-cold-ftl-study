@@ -1,22 +1,19 @@
 # Reproducibility status
 
-## Preserved
+## Included in this repository
 
 - complete modified `ftl.c` / `ftl.h`
-- final 3x3 parameter grid: threshold 8/10/12 x hot-line count 20/24/28
+- final 3×3 parameter grid: threshold 8/10/12 × hot-line count 20/24/28
 - paired host-visible summary metrics
 - final FTL GC/WAF counters
-- original Figure I-Q media extracted from the project PPT
-- repository-side helper scripts that expose the required build/replay inputs explicitly
+- Figure I-Q extracted from the project PPT
 
-## Not preserved in the supplied materials
+## Not included in the project archive
 
-- exact historical FEMU base commit hash
+- exact FEMU base commit used for the experiments
 - original PostgreSQL trace-to-replay conversion program
-- original converted replay-input CSV files
-- exact original FEMU launch/build command used for every run
-- repeated trials/variance data (the supplied experiment appears to contain one completed replay per configuration)
+- converted replay-input files
+- exact original FEMU launch/build command for every run
+- repeated-trial/variance data
 
-Because of these gaps, this repository should be read as a documented experiment archive and implementation record, not as a one-command reproduction package.
-
-The scripts in `scripts/` intentionally require environment variables for the missing site-specific commands instead of inventing them.
+Because these items are not available, this repository documents the completed experiment and modified FTL implementation but does not claim one-command reproducibility.

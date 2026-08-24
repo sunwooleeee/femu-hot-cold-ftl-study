@@ -1,0 +1,34 @@
+name: Reconstruct prepared project bundle
+
+on:
+  push:
+    paths:
+      - '.upload_parts/READY'
+
+permissions:
+  contents: write
+
+jobs:
+  reconstruct:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reconstruct project files
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat .upload_parts/bundle.part* | tr -d '\n' | base64 -d > /tmp/femu-upload-bundle.tar.gz
+          tar -xzf /tmp/femu-upload-bundle.tar.gz -C .
+          rm -rf .upload_parts
+      - name: Commit reconstructed project
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          if git diff --cached --quiet; then
+            echo 'Nothing to commit.'
+            exit 0
+          fi
+          git commit -m 'Add FEMU Hot/Cold FTL implementation and experiment artifacts'
+          git push

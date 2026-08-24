@@ -10,8 +10,4 @@ The experiment replays storage operations derived from the PostgreSQL path of th
 
 Approximately 95% of WRITE requests were 8 KB, and the workload frequently issued a write followed by a flush.
 
-## What is missing
 
-The original converted replay-input CSV files and the trace-to-replay conversion program were not included in the supplied project materials. For that reason, this directory does not fabricate replacement workload files.
-
-When the original workload files are recovered, place them here (for example `p100_sim_input.csv`, `p500_sim_input.csv`, and `p1000_sim_input.csv`) and point `scripts/replay_workload.sh` at the desired file.
